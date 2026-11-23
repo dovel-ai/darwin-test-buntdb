@@ -5,6 +5,7 @@ go 1.22
 require (
 	github.com/dovel-ai/darwin-fixture-geo v0.7.1
 	github.com/dustin/go-humanize v1.1.0
+	github.com/fatih/color v1.10.0
 	github.com/google/uuid v1.6.0
 	github.com/mattn/go-runewidth v0.0.25
 	github.com/pkg/errors v0.9.1
@@ -21,6 +22,9 @@ require (
 
 require (
 	github.com/clipperhouse/uax29/v2 v2.2.0 // indirect
+	github.com/mattn/go-colorable v0.1.8 // indirect
+	github.com/mattn/go-isatty v0.0.12 // indirect
 	github.com/tidwall/pretty v1.3.1 // indirect
 	github.com/tidwall/tinyqueue v0.1.1 // indirect
+	golang.org/x/sys v0.0.0-20200223170610-d5e6a3e2c0ae // indirect
 )
