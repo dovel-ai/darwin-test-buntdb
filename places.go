@@ -23,12 +23,12 @@ func (p *Places) Close() error { return p.db.Close() }
 
 // Put stores a place written as "lat,lon".
 func (p *Places) Put(name, latlon string) error {
-	point, err := geo.ParsePoint(latlon)
+	point, err := geo.Parse(latlon)
 	if err != nil {
 		return fmt.Errorf("place %s: %w", name, err)
 	}
 	return p.db.Update(func(tx *Tx) error {
-		_, _, err := tx.Set("place:"+name, geo.FormatPoint(point), nil)
+		_, _, err := tx.Set("place:"+name, geo.Format(point), nil)
 		return err
 	})
 }
@@ -56,5 +56,5 @@ func (p *Places) Trip(from, to string) (km, bearing float64, halfway string, err
 	if err != nil {
 		return 0, 0, "", err
 	}
-	return geo.GreatCircleDistance(a, b), geo.InitialBearing(a, b), geo.FormatPoint(geo.Interpolate(a, b, 0.5)), nil
+	return geo.GreatCircleDistance(a, b), geo.InitialBearing(a, b), geo.Format(geo.Interpolate(a, b, 0.5)), nil
 }
