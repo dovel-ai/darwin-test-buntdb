@@ -1,3 +1,5 @@
+github.com/dovel-ai/darwin-fixture-geo v0.5.2 h1:hez0t8kcUC+/qk0IzYHEdVlYBrYYwdMrj8COiHJQlTc=
+github.com/dovel-ai/darwin-fixture-geo v0.5.2/go.mod h1:sOIOZ9i7/7jHpkRF9xoNjMqWqUvO4gAcD9cY1t7Ouvk=
 github.com/tidwall/assert v0.1.0 h1:aWcKyRBUAdLoVebxo95N7+YZVTFF/ASTr7BN4sLP6XI=
 github.com/tidwall/assert v0.1.0/go.mod h1:QLYtGyeqse53vuELQheYl9dngGCJQ+mTtlxcktb+Kj8=
 github.com/tidwall/btree v1.4.2 h1:PpkaieETJMUxYNADsjgtNRcERX7mGc/GP2zp/r5FM3g=

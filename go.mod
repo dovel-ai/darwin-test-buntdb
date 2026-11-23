@@ -1,8 +1,9 @@
 module github.com/tidwall/buntdb
 
-go 1.18
+go 1.22
 
 require (
+	github.com/dovel-ai/darwin-fixture-geo v0.5.2
 	github.com/tidwall/assert v0.1.0
 	github.com/tidwall/btree v1.4.2
 	github.com/tidwall/gjson v1.14.3
