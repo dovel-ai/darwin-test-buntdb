@@ -26,5 +26,5 @@ require (
 	github.com/mattn/go-isatty v0.0.12 // indirect
 	github.com/tidwall/pretty v1.3.1 // indirect
 	github.com/tidwall/tinyqueue v0.1.1 // indirect
-	golang.org/x/sys v0.0.0-20200223170610-d5e6a3e2c0ae // indirect
+	golang.org/x/sys v0.30.0 // indirect
 )
