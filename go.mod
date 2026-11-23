@@ -6,7 +6,7 @@ require (
 	github.com/dovel-ai/darwin-fixture-geo v0.7.1
 	github.com/dustin/go-humanize v1.0.0
 	github.com/google/uuid v1.6.0
-	github.com/mattn/go-runewidth v0.0.9
+	github.com/mattn/go-runewidth v0.0.25
 	github.com/pkg/errors v0.9.1
 	github.com/tidwall/assert v0.1.1
 	github.com/tidwall/btree v1.8.2
@@ -20,6 +20,7 @@ require (
 )
 
 require (
+	github.com/clipperhouse/uax29/v2 v2.2.0 // indirect
 	github.com/tidwall/pretty v1.3.1 // indirect
 	github.com/tidwall/tinyqueue v0.1.1 // indirect
 )
