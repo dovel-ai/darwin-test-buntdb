@@ -4,6 +4,7 @@ go 1.22
 
 require (
 	github.com/dovel-ai/darwin-fixture-geo v0.7.1
+	github.com/dustin/go-humanize v1.0.0
 	github.com/google/uuid v1.6.0
 	github.com/mattn/go-runewidth v0.0.9
 	github.com/pkg/errors v0.9.1
