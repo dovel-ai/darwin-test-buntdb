@@ -15,6 +15,7 @@ require (
 	github.com/tidwall/match v1.2.0
 	github.com/tidwall/rtred v0.1.2
 	golang.org/x/text v0.22.0
+	gopkg.in/yaml.v3 v3.0.0
 )
 
 require (
