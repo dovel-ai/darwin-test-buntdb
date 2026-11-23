@@ -44,7 +44,9 @@ jobs:
     - uses: actions/checkout@v4
     - uses: actions/setup-go@v5
       with:
-        go-version-file: go.mod
+        # Today's macOS refuses test binaries Go 1.22 links (no LC_UUID load command): the current Go, as a macOS
+        # developer would have.
+        go-version: stable
     - name: Dependency policy
       run: node .github/fixture/policy.mjs
     - name: Test
