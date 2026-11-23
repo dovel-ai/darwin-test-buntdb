@@ -1,19 +1,17 @@
-// Package geoplaces keeps named places in a buntdb database and measures between them.
-package geoplaces
+package buntdb
 
 import (
 	"fmt"
 
 	geo "github.com/dovel-ai/darwin-fixture-geo"
-	"github.com/tidwall/buntdb"
 )
 
-// Places is a set of named places stored in a buntdb database.
-type Places struct{ db *buntdb.DB }
+// Places is a set of named places kept in a database, with distances and bearings between them.
+type Places struct{ db *DB }
 
-// Open opens an in-memory set of places.
-func Open() (*Places, error) {
-	db, err := buntdb.Open(":memory:")
+// OpenPlaces opens an in-memory set of places.
+func OpenPlaces() (*Places, error) {
+	db, err := Open(":memory:")
 	if err != nil {
 		return nil, err
 	}
@@ -29,15 +27,15 @@ func (p *Places) Put(name, latlon string) error {
 	if err != nil {
 		return fmt.Errorf("place %s: %w", name, err)
 	}
-	return p.db.Update(func(tx *buntdb.Tx) error {
+	return p.db.Update(func(tx *Tx) error {
 		_, _, err := tx.Set("place:"+name, geo.FormatPoint(point), nil)
 		return err
 	})
 }
 
-func (p *Places) get(name string) (geo.Point, error) {
+func (p *Places) place(name string) (geo.Point, error) {
 	var point geo.Point
-	err := p.db.View(func(tx *buntdb.Tx) error {
+	err := p.db.View(func(tx *Tx) error {
 		value, err := tx.Get("place:" + name)
 		if err != nil {
 			return fmt.Errorf("place %s: %w", name, err)
@@ -50,11 +48,11 @@ func (p *Places) get(name string) (geo.Point, error) {
 
 // Trip is the distance in kilometres, the initial bearing in degrees and the halfway point between two places.
 func (p *Places) Trip(from, to string) (km, bearing float64, halfway string, err error) {
-	a, err := p.get(from)
+	a, err := p.place(from)
 	if err != nil {
 		return 0, 0, "", err
 	}
-	b, err := p.get(to)
+	b, err := p.place(to)
 	if err != nil {
 		return 0, 0, "", err
 	}

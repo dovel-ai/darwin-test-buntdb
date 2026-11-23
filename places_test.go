@@ -1,12 +1,12 @@
-package geoplaces
+package buntdb
 
 import (
 	"math"
 	"testing"
 )
 
-func TestTrip(t *testing.T) {
-	places, err := Open()
+func TestPlacesTrip(t *testing.T) {
+	places, err := OpenPlaces()
 	if err != nil {
 		t.Fatal(err)
 	}

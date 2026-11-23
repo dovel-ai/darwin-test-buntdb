@@ -41,16 +41,16 @@ jobs:
           go get "$MODULE@$VERSION"
           go mod tidy
           if [ "$PROBE" = true ]; then
-            value=$(go test ./extras -run 'TestProbe' -v -count=1 | sed -n 's/.*PROBE=//p' | head -1)
+            value=$(go test . -run 'TestProbe' -v -count=1 | sed -n 's/.*PROBE=//p' | head -1)
             echo "The release gives today: $value"
             [ -n "$value" ]
             PROBE_VALUE="$value" node .github/fixture/developer.mjs > /dev/null
           fi
           new=$(git status --porcelain --untracked-files=all | awk '{print $2}' | grep '\.go$' || true)
           [ -z "$new" ] || gofmt -w $new
-          [ -z "$new" ] || go vet $(echo "$new" | xargs -n1 dirname | sort -u | sed 's#^#./#')
-          go build ./...
-          go test ./... -count=1
+          # As this repository's CI does (go.yml): the root package, where the code went.
+          go build -v .
+          go test -count=1 .
           git config user.name "fixture-developer"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
