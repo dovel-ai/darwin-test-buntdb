@@ -34,3 +34,18 @@ jobs:
 
     - name: Test
       run: go test -v .
+
+  macos:
+    # The fixture's: buntdb's tests on macOS, and the team's dependency policy (.github/fixture/policy.mjs). Darwin's
+    # validation runs the repository's CI with act on Linux and cannot run this job.
+    name: macOS
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-go@v5
+      with:
+        go-version-file: go.mod
+    - name: Dependency policy
+      run: node .github/fixture/policy.mjs
+    - name: Test
+      run: go test -count=1 .

@@ -1,0 +1,6 @@
+{
+  "github.com/fatih/color": {
+    "below": "v1.17.0",
+    "why": "our terminal-output review on macOS covered color only up to v1.16"
+  }
+}

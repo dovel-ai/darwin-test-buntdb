@@ -28,6 +28,7 @@ const DEPENDENCIES = [
   { module: 'gopkg.in/yaml.v3', version: 'v3.0.0', imports: ['gopkg.in/yaml.v3'], use: 'mustYAML(map[string]int{"keys": 2})', returns: 'string', check: 'v != "keys: 2\\n"', expect: ['update'],
     helper: 'func mustYAML(v any) string {\n\tout, err := yaml.Marshal(v)\n\tif err != nil {\n\t\tpanic(err)\n\t}\n\treturn string(out)\n}\n' },
   { module: 'github.com/dustin/go-humanize', version: 'v1.0.0', imports: ['github.com/dustin/go-humanize'], use: 'humanize.Comma(1234567)', returns: 'string', check: 'v != "1,234,567"', expect: ['update'] },
+  { module: 'github.com/fatih/color', version: 'v1.10.0', imports: ['github.com/fatih/color'], use: 'color.New(color.FgGreen).Sprint("ok")', returns: 'string', check: 'v != "ok"', expect: ['update'], note: 'the team caps color below v1.17 (.github/fixture/dependency-policy.json), checked only by the macOS job Darwin cannot run: a proposal past it fails CI where the base passes, for the CI repair Darwin tries' },
 ]
 
 const goMod = readFileSync('go.mod', 'utf8')
