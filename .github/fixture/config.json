@@ -1,0 +1,10 @@
+{
+  "ecosystem": "gomod",
+  "library": "dovel-ai/darwin-fixture-geo",
+  "deadlineHours": 48,
+  "heldMergeAfterHours": 24,
+  "reject": {
+    "package": "github.com/tidwall/lotsa",
+    "reason": "Not now, thanks: lotsa only drives our benchmarks, and we keep it where it is until we redo them."
+  }
+}
