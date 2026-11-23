@@ -8,7 +8,7 @@ require (
 	github.com/tidwall/btree v1.4.2
 	github.com/tidwall/gjson v1.14.3
 	github.com/tidwall/grect v0.1.4
-	github.com/tidwall/lotsa v1.0.2
+	github.com/tidwall/lotsa v1.0.5
 	github.com/tidwall/match v1.1.1
 	github.com/tidwall/rtred v0.1.2
 )
