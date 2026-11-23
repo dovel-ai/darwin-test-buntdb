@@ -4,7 +4,7 @@ go 1.22
 
 require (
 	github.com/dovel-ai/darwin-fixture-geo v0.7.1
-	github.com/dustin/go-humanize v1.0.0
+	github.com/dustin/go-humanize v1.1.0
 	github.com/google/uuid v1.6.0
 	github.com/mattn/go-runewidth v0.0.9
 	github.com/pkg/errors v0.9.1
@@ -16,7 +16,7 @@ require (
 	github.com/tidwall/match v1.2.0
 	github.com/tidwall/rtred v0.1.2
 	golang.org/x/text v0.22.0
-	gopkg.in/yaml.v3 v3.0.0
+	gopkg.in/yaml.v3 v3.0.1
 )
 
 require (
