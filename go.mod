@@ -4,7 +4,7 @@ go 1.22
 
 require (
 	github.com/dovel-ai/darwin-fixture-geo v0.7.1
-	github.com/google/uuid v1.3.0
+	github.com/google/uuid v1.6.0
 	github.com/tidwall/assert v0.1.1
 	github.com/tidwall/btree v1.8.2
 	github.com/tidwall/gjson v1.18.0
