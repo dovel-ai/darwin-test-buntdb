@@ -28,7 +28,7 @@ func (p *Places) Put(name, latlon string) error {
 		return fmt.Errorf("place %s: %w", name, err)
 	}
 	return p.db.Update(func(tx *Tx) error {
-		_, _, err := tx.Set("place:"+name, geo.Format(point), nil)
+		_, _, err := tx.Set("place:"+name, geo.PointString(point), nil)
 		return err
 	})
 }
@@ -56,5 +56,5 @@ func (p *Places) Trip(from, to string) (km, bearing float64, halfway string, err
 	if err != nil {
 		return 0, 0, "", err
 	}
-	return geo.GreatCircleDistance(a, b), geo.InitialBearing(a, b), geo.Format(geo.Interpolate(a, b, 0.5)), nil
+	return geo.GreatCircleDistance(a, b), geo.InitialBearing(a, b), geo.PointString(geo.Interpolate(a, b, 0.5)), nil
 }
