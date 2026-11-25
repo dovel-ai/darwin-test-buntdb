@@ -635,3 +635,5 @@ Josh Baker [@tidwall](http://twitter.com/tidwall)
 ## License
 
 BuntDB source code is available under the MIT [License](/LICENSE).
+
+<!-- Team note: reviewed the storage benchmarks on 2026-11-25 (day 1). -->
