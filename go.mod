@@ -3,7 +3,7 @@ module github.com/tidwall/buntdb
 go 1.22
 
 require (
-	github.com/dovel-ai/darwin-fixture-geo v0.9.1
+	github.com/dovel-ai/darwin-fixture-geo v0.9.2
 	github.com/dustin/go-humanize v1.1.0
 	github.com/fatih/color v1.10.0
 	github.com/google/uuid v1.6.0
